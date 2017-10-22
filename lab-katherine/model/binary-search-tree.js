@@ -4,7 +4,7 @@ const Node = require('./node.js')
 
 module.exports = class BinarySearchTree {
   constructor() {
-    this.root = null;
+    this.root = null
   }
 
   insert(value) {
@@ -15,36 +15,36 @@ module.exports = class BinarySearchTree {
       let current = this.root
       let parent
       while(true) {
-        parent = current;
+        parent = current
         if (value < current.value) {
-          current = current.left;
+          current = current.left
           if (current === null) {
             parent.left = node;
             break;
           }
         } else {
-          current = current.right;
+          current = current.right
           if (current === null) {
-            parent.right = node;
-            break;
+            parent.right = node
+            break
           }
         }
       }
     }
   }
 
-  find(value) {
-    let current = this.root;
-    while (current.value !== value) {
-      if (value < current.value) {
-        current = current.left;
-      } else {
-        current = current.right;
-      }
-      if (current === null) {
-        return null;
+  find(predicate){
+    if (typeof predicate !== 'function') {
+      throw new TypeError('__LINKED_LIST_ERROR__ predicate should be a function')
+    }
+    if (predicate(this) === true) {
+      return this
+    } else {
+      let current = this.root
+      console.log(current.value)
+      while (current.value !== data) {
+
       }
     }
-    return current;
   }
 }
