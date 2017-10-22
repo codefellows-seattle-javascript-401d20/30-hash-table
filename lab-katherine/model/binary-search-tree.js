@@ -7,8 +7,8 @@ module.exports = class BinarySearchTree {
     this.root = null;
   }
 
-  insert(data) {
-    const node = new Node(data);
+  insert(value) {
+    const node = new Node(value);
     if (this.root === null) {
       this.root = node
     } else {
@@ -16,7 +16,7 @@ module.exports = class BinarySearchTree {
       let parent
       while(true) {
         parent = current;
-        if (data < current.data) {
+        if (value < current.value) {
           current = current.left;
           if (current === null) {
             parent.left = node;
@@ -32,6 +32,4 @@ module.exports = class BinarySearchTree {
       }
     }
   }
-
-  
 }
