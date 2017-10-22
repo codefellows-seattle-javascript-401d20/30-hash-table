@@ -32,4 +32,19 @@ module.exports = class BinarySearchTree {
       }
     }
   }
+
+  find(value) {
+    let current = this.root;
+    while (current.value !== value) {
+      if (value < current.value) {
+        current = current.left;
+      } else {
+        current = current.right;
+      }
+      if (current === null) {
+        return null;
+      }
+    }
+    return current;
+  }
 }
