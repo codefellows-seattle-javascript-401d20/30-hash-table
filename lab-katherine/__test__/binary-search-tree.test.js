@@ -38,8 +38,8 @@ describe('binary search tree', () => {
     bst.insert(3)
     bst.insert(5)
     bst.insert(7)
-    let result = bst.find(node => node.value === 3)
-    // expect(result.value).toBe(3)
+    let result = bst.find(node => node.value === 4)
+    expect(result).toBe(4)
   })
 
   // test('It should have the value searched removed', () => {
