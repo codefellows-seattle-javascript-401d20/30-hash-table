@@ -3,41 +3,42 @@
 const Node = require('./node.js')
 
 module.exports = class BinarySearchTree {
-  constructor() {
-    this.root = null
+  constructor(value) {
+    this.value = value
+    this.left = null
+    this.right = null
   }
 
   insert(value) {
-    const root = this.root;
+    if (this.value > value){
 
-    if(!root){
-      this.root = new Node(value);
-      return;
     }
-
-    let currentNode = root;
-    const newNode = new Node(value);
-
-    while(currentNode){
-      if(value < currentNode.value){
-        if(!currentNode.left){
-          currentNode.left = newNode;
-          break;
-        }
-        else{
-          currentNode = currentNode.left;
-        }
-      }
-      else{
-        if(!currentNode.right){
-          currentNode.right = newNode;
-          break;
-        }
-        else{
-          currentNode = currentNode.right;
-        }
-      }
-    }
+      // // if the entered value is less than the value of the current node
+      // if(this.value !== null){
+      //   if(this)
+      //   // if left in the current node doesn't exist
+      //   if(!currentNode.left){
+      //     // assign the new node holding the passed in value to left of the current node
+      //     currentNode.left = newNode;
+      //     break;
+      //   }
+      //   else{
+      //     // make the value in the current node's left into the current node
+      //     currentNode = currentNode.left;
+      //   }
+      // }
+      // else{
+      //   // if right in the current node doesn't exist
+      //   if(!currentNode.right){
+      //     // assign the new node holding the passed in value to the right of the current node
+      //     currentNode.right = newNode;
+      //     break;
+      //   }
+      //   else{
+      //     // make the current node's right into the new node
+      //     currentNode = currentNode.right;
+      //   }
+      // }
   }
 
   // find(value) {
