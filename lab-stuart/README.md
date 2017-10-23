@@ -1,7 +1,7 @@
 #  Binary Search Tree and Hash Table - Lab Stuart
 
 ## About:
+Illustrates implementation of a Hash Table with a Binary Search Tree data structure.
 
 ## Usage:
-
-## Dependencies:
+`npm test` from the node terminal at project root `/`.
