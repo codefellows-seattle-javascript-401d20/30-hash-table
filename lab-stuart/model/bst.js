@@ -9,7 +9,7 @@ class BST {
 
   insert(node){
     if(!(node instanceof BST))
-      throw new Error('node must be a bst');
+      throw new Error('Node must be a bst. ');
     if(node.value === this.value)
       return;
     if(node.value < this.value){
@@ -25,6 +25,35 @@ class BST {
       return;
     }
     this.right.insert(node);
+  }
+
+  remove(node) {
+    if(!(node instanceof BST))
+      throw new Error('Node must be a bst. ');
+
+    if (this === node) {
+      return this.right;
+    } else if (!this.right) {
+      return this;
+    } else if (this.right === node) {
+      this.right = this.right.right;
+    } else {
+      this.right.remove(node);
+    }
+    return this;
+  }
+
+  find(predicate) {
+    if (typeof predicate !== 'function') {
+      throw new TypeError('::BST_ERROR:: Predicate should be a function. ');
+    }
+    if (predicate(this) === true) {
+      return this;
+    } else if (this.right) {
+      return this.right.find(predicate);
+    } else {
+      return null;
+    }
   }
 }
 

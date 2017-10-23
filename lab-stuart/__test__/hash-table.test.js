@@ -77,8 +77,8 @@ describe('Hash Table',() => {
       expect(bucket.value.key).toBe('cool');
       expect(bucket.value.htValue).toBe('beans');
 
-      expect(bucket.next.value.key).toBe('looc');
-      expect(bucket.next.value.htValue).toBe('banana');
+      expect(bucket.right.value.key).toBe('looc');
+      expect(bucket.right.value.htValue).toBe('banana');
     });
   });
 

@@ -11,7 +11,7 @@ module.exports = class HashTable{
 
   _generateHash(key){
     if(typeof key !== 'string')
-      throw new TypeError('::HASTABLE_ERROR:: key should be a string');
+      throw new TypeError('::HASTABLE_ERROR:: Key should be a string. ');
     let rawHash = 0;
 
     for(let i in key){
@@ -35,7 +35,7 @@ module.exports = class HashTable{
       node.value.htValue = htValue;
       return this;
     }
-    this._buckets[hash].append(getBST({key,htValue}));
+    this._buckets[hash].insert(getBST({key,htValue}));
     return this;
   }
 
