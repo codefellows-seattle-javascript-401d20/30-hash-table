@@ -10,8 +10,22 @@ module.exports = class BinarySearchTree {
   }
 
   insert(value) {
-    if (this.value > value){
-
+    let bstNode = value;
+    if (bstNode.value < this.value.value){
+      if(this.left === null){
+        this.left = new BinarySearchTree(bstNode)
+      }
+      else {
+        return this.left.insert(value)
+      }
+    }
+    if(bstNode.value > this.value.value) {
+      if(this.right === null){
+        this.left = new BinarySearchTree(bstNode)
+      }
+      else {
+        return this.right.insert(value)
+      }
     }
       // // if the entered value is less than the value of the current node
       // if(this.value !== null){
