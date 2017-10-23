@@ -1,0 +1,14 @@
+{
+  "name": "lab-stuart",
+  "version": "0.0.1",
+  "description": "Binary Search Tree and Hash Table",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest -i --coverage"
+  },
+  "author": "stuartdkershaw@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^21.2.1"
+  }
+}
