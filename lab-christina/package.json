@@ -1,0 +1,15 @@
+{
+  "name": "lab-christina",
+  "version": "0.0.1",
+  "description": "Implementation of a binary search tree. Creation of a hash table.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest -i --coverage"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "jest-cli": "^21.2.1",
+    "react": "^16.0.0"
+  }
+}
