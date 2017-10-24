@@ -1,7 +1,7 @@
 'use strict';
 
 class Node {
-  constructor(node){
+  constructor(value){
     this.value = value;
     this.next = null;
     this.previous = null;
@@ -9,7 +9,7 @@ class Node {
 }
 
 class BinarySearchTree {
-  constructor(){
+  constructor(node){
     this.root = null;
   }
 
