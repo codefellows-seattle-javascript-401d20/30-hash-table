@@ -6,45 +6,35 @@ class Node {
     this.next = null;
     this.previous = null;
   }
-}
 
+}
 class BinarySearchTree {
-  constructor(node){
+  constructor(){
     this.root = null;
   }
 
-  insert(node) {
-    if(!(node instanceof BinarySearchTree))
-      throw new Error('Must be a tree');
-    if(!this.root)
-      this.root = new Node(node);
-      return;
-    let createTree = function(node) {
-    while(this.root)
-    if(this.root.previous)
-      return createTree(this.previous)
-    if(this.value < this.root.value && !this.root.previous)
-      this.root.previous = this;
-      return this;
-    else if (his.value > this.root.value && !this.root.next)
-      this.root.next = this;
-      return this;
-  }
-}
-
-  remove(node){
-    if(!(node instanceof BinarySearchTree))
-    throw new Error('Node must be a tree');
-    if(this === node) {
-      let prev = this.previous;
-      prev.next = prev.next.next;
-      prev.next.previous = prev;
+  insert(value) {
+    let node = this.root;
+    if(this.root === null){
+      this.root = new Node(value);
     } else {
-      if(!this.next)
-      return this;
-      this.next.remove(node);
+      let createTree = function() {
+        while(this.value !== node.value)
+          if(this.value < node.value && node.previous === null)
+            node.previous = this;
+        if(this.value < node.value && node.previous !== null)
+          return createTree(node.previous);
+        if (this.value > node.value && node.next === null)
+          node.next = this;
+        if(this.value > node.value && node.next !== null)
+          return createTree(node.next);
+      };
     }
   }
 }
+
+new Node(4);
+new Node(5);
+
 
 module.exports = BinarySearchTree;
