@@ -37,4 +37,18 @@ describe('#BinarySearchTree', () => {
     expect(rootNode.previous.value).toBe(7);
     expect(rootNode.next.value).toBe(9);
   });
+
+  test('REMOVE -should remove a node', () => {
+    let rootNode = new BinarySearchTree(8);
+    let middleNode = new BinarySearchTree(9);
+    rootNode.insert(middleNode);
+    let rightNode = new BinarySearchTree(10);
+    rootNode.insert(rightNode);
+
+    rootNode.remove(middleNode);
+
+    expect(rootNode.value).toBe(8);
+    expect(rootNode.previous).toBe(null);
+    expect(rootNode.next.value).toBe(10);
+  });
 });
