@@ -1,30 +1,30 @@
-'use strict'
+'use strict';
 
-const Node = require('./node.js')
+// const Node = require('./node.js');
 
 module.exports = class BinarySearchTree {
   constructor(value) {
-    this.value = value
-    this.left = null
-    this.right = null
+    this.value = value;
+    this.left = null;
+    this.right = null;
   }
 
   insert(value) {
     let bstNode = value;
     if (bstNode.value < this.value.value){
       if(this.left === null){
-        this.left = new BinarySearchTree(bstNode)
+        this.left = new BinarySearchTree(bstNode);
       }
       else {
-        return this.left.insert(value)
+        return this.left.insert(value);
       }
     }
     if(bstNode.value > this.value.value) {
       if(this.right === null){
-        this.left = new BinarySearchTree(bstNode)
+        this.right = new BinarySearchTree(bstNode);
       }
       else {
-        return this.right.insert(value)
+        return this.right.insert(value);
       }
     }
       // // if the entered value is less than the value of the current node
@@ -87,33 +87,33 @@ module.exports = class BinarySearchTree {
 
   find(predicate){
     if (typeof predicate !== 'function') {
-      throw new TypeError('__LINKED_LIST_ERROR__ predicate should be a function')
+      throw new TypeError('__LINKED_LIST_ERROR__ predicate should be a function');
     }
     // if (predicate(this) === true) {
     //   return this
     // } else {
-    let current = this.root
+    let current = this.root;
     // if(current){
     //   true
     // } else {
     //   let current = this.root
     // }
-    console.log('this: ', this)
-    console.log('current (this.root): ', current)
-    console.log('current.value: ', current.value)
-    console.log('current.right: ', current.right)
-    console.log('current.left: ', current.left)
-    console.log('current.right.value: ', current.right.value)
-    console.log('predicate(current): ', predicate(current))
+    console.log('this: ', this);
+    console.log('current (this.root): ', current);
+    console.log('current.value: ', current.value);
+    console.log('current.right: ', current.right);
+    console.log('current.left: ', current.left);
+    console.log('current.right.value: ', current.right.value);
+    console.log('predicate(current): ', predicate(current));
     if(predicate(current) === true) {
-      return current.value
+      return current.value;
     }
     else if(current.left !== null && current.value > current.left.value){
-      current.left.find(predicate)
+      current.left.find(predicate);
     }
     else if(current.right !== null && current.value < current.right.value){
-      current.right.find(predicate)
+      current.right.find(predicate);
     }
     // }
   }
-}
+};
