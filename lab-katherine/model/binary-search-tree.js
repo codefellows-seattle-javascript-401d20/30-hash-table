@@ -9,7 +9,7 @@ module.exports = class BinarySearchTree {
 
   insert(value) {
     let bstNode = value;
-    if (bstNode.value < this.value.value){
+    if (bstNode.key < this.value.key){
       if(this.left === null){
         this.left = new BinarySearchTree(bstNode);
       }
@@ -17,7 +17,7 @@ module.exports = class BinarySearchTree {
         return this.left.insert(value);
       }
     }
-    if(bstNode.value > this.value.value) {
+    if(bstNode.key > this.value.key) {
       if(this.right === null){
         this.right = new BinarySearchTree(bstNode);
       }
