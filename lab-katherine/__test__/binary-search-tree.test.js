@@ -51,6 +51,8 @@ describe('binary search tree', () => {
     expect(bst.right.left.right).toEqual(null);
     expect(bst.right.right.left).toEqual(null);
     expect(bst.right.right.right).toEqual(null);
+    bst.insert({key: 4, value: 'dogs'});
+    expect(bst.value).toEqual({key: 4, value: 'dogs'});
   });
 
   test('It should return the found value', () => {
