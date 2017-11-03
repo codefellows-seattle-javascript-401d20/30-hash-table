@@ -27,15 +27,15 @@ describe('binary search tree', () => {
     bst.insert({key: 'hamsters', value: 3});
     bst.insert({key: 'parakeets', value: 5});
     bst.insert({key: 'horses', value: 7});
-    console.log(bst);
-    console.log(bst.left.value);
-    console.log(bst.right.value);
-    console.log(bst.left.left.value);
-    console.log(bst.left.right.value);
-    console.log(bst.right.left.value);
-    console.log(bst.right.right.value);
-    console.log(bst.left.left.left);
-    console.log(bst.left.left.right);
+    // console.log(bst);
+    // console.log(bst.left.value);
+    // console.log(bst.right.value);
+    // console.log(bst.left.left.value);
+    // console.log(bst.left.right.value);
+    // console.log(bst.right.left.value);
+    // console.log(bst.right.right.value);
+    // console.log(bst.left.left.left);
+    // console.log(bst.left.left.right);
     expect(bst.value).toEqual({key: 'puppies', value: 4});
     expect(bst.left.value).toEqual({key: 'kittens', value: 2});
     expect(bst.right.value).toEqual({key: 'guinea pigs', value: 6});
@@ -51,5 +51,18 @@ describe('binary search tree', () => {
     expect(bst.right.left.right).toEqual(null);
     expect(bst.right.right.left).toEqual(null);
     expect(bst.right.right.right).toEqual(null);
+  });
+
+  test('It should return the found value', () => {
+    let bst = new BST({key: 'puppies', value: 4});
+    bst.insert({key: 'kittens', value: 2});
+    bst.insert({key: 'guinea pigs', value: 6});
+    bst.insert({key: 'canaries', value: 1});
+    bst.insert({key: 'hamsters', value: 3});
+    bst.insert({key: 'parakeets', value: 5});
+    bst.insert({key: 'horses', value: 7});
+    let result = bst.find({key: 'puppies', value: 4});
+    console.log('result: ', result);
+    expect(result).toEqual({key: 'puppies', value: 4});
   });
 });
