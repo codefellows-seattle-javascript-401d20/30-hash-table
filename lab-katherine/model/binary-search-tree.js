@@ -30,28 +30,19 @@ module.exports = class BinarySearchTree {
     }
   }
 
-  find(value){
-    // let current = this.root;
+  find(key){
+    // let bstNode = key;
     console.log('this: ', this);
     console.log('this.value: ', this.value);
     console.log('this: ', this);
-    console.log('value: ', value);
-    console.log('value(this.value): ', value(this.value));
-    console.log('value(this): ', value(this));
-    // console.log('current (this.root): ', current);
-    // console.log('current.value: ', current.value);
-    // console.log('current.right: ', current.right);
-    // console.log('current.left: ', current.left);
-    // console.log('current.right.value: ', current.right.value);
-    // console.log('value(current): ', value(current));
-    if(value === this.value) {
+    if(key === this.value.key) {
       return this.value;
     }
     else if(this.left !== null && this.value > this.left.value){
-      this.left.find(value);
+      this.left.find(key);
     }
     else if(this.right !== null && this.value < this.right.value){
-      this.right.find(value);
+      this.right.find(key);
     }
   }
 };
